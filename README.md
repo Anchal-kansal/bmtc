@@ -1,4 +1,4 @@
-#**REQUIRED DEPENDENCIES**
+# **REQUIRED DEPENDENCIES**
 
 Flask == 0.12.2
 
@@ -10,10 +10,10 @@ SQLite == 3.8.2
 
 beautifulsoup4
 
-#**DIRECTORY STRUCTURE**
+# **DIRECTORY STRUCTURE**
 
 
-###bmtc->FlaskApp->templates
+### bmtc->FlaskApp->templates
                            
                            ->index.html
 
@@ -39,6 +39,6 @@ beautifulsoup4
       
       ->bmtc_route_scrap_Nov_09_2017.json
    
-#**BUILD INSTRUCTIONS**
+# **BUILD INSTRUCTIONS**
     
     
