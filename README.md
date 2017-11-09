@@ -1,26 +1,26 @@
-# bmtc
-*download requirements.txt*
+**REQUIRED DEPENDENCIES**
 
-pip3 install -r requirements.txt
+Flask == 0.12.2
+Python == 2.7.6
+Python == 3.4.3 
+SQLite == 3.8.2 
+beautifulsoup4
 
-*download selenium latest version*
+**DIRECTORY STRUCTURE**
 
-sudo pip3 install selenium
-
-*download latest firefox browser*
-
-sudo apt-get install firefox
-
-*download latest geckodriver, untar it, make it executable and put it in path usr/local/bin*
-
-wget https://github.com/mozilla/geckodriver/releases/download/v0.18.0/geckodriver-v0.18.0-linux64.tar.gz
-
-tar -xvzf geckodriver*
-
-chmod +x geckodriver
-
-sudo cp ./geckodriver /usr/local/bin
-
-*run the program*
-
-python3 bmtc.py
+**bmtc->FlaskApp->templates**->index.html
+                             ->app.py
+                             ->bmtc.db
+      ->route.py
+      ->fare.py
+      ->route_db.py
+      ->fare_db.py
+      ->route.pdf
+      ->fare.pdf
+      ->bmtc.db
+      ->bmtc_fare_scrap_Nov_09_2017.json
+      ->bmtc_route_scrap_Nov_09_2017.json
+   
+**BUILD INSTRUCTIONS**
+    
+    
