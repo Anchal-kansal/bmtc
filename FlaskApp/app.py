@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import sqlite3 
 
-def retrieveUsers(busid, routeid):
+def retrieveUsers():
     con = sqlite3.connect("bmtc.db")
     cur = con.cursor()
     cur.execute("SELECT * FROM routes where bus_id='314' and route_id='3E'")
@@ -14,9 +14,9 @@ app = Flask(__name__)
 @app.route("/", methods=['POST', 'GET'])
 def main():
     if request.method=='POST':
-        busid = request.form['busid']
-   	routeid = request.form['routeid']	
-   	users = retrieveUsers(busid, routeid)
+        busId = request.form['busid']
+   	routeId = request.form['routeid']	
+   	users = retrieveUsers()
 	return render_template('index.html', users=users)
     else:
         return render_template('index.html')
