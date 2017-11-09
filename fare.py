@@ -5,13 +5,18 @@ import json
 import sqlite3
 import time
 
-conn = sqlite3.connect("bmtc.db")
-c = conn.cursor()
-c.execute('DROP TABLE IF EXISTS fares')
-c.execute('CREATE TABLE IF NOT EXISTS fares(Stage TEXT, Adults TEXT, Child TEXT, Senior TEXT)')
+try:
+    conn = sqlite3.connect("bmtc.db")
+    c = conn.cursor()
+    c.execute('DROP TABLE IF EXISTS fares')
+    c.execute('CREATE TABLE fares(Stage INTEGER, Adults INTEGER, Child INTEGER, Senior INTEGER)')
+except:
+    print("Database Connection error")
+    os._exit(1)
 
 print("enter the type of bus")
 bustype=input()
+
 if (bustype=='A/C'):
     url1="https://www.mybmtc.com/ac-service?fareid=acs&qt-home_quick_tab_bottom=2"
 elif (bustype=='General'):
@@ -44,10 +49,13 @@ for i in table:
         try:
             tab_row["Senior Citizen"]=cols[3].get_text()
         except:
-            tab_row["Senior Citizen"]="NULL"
+            tab_row["Senior Citizen"]="0"
         
         sub_data.append(tab_row)
-        c.execute("INSERT INTO fares (Stage, Adults, Child, Senior) values (? , ? , ? , ?)", (tab_row["Fare Stage Number"],tab_row["Adults"],tab_row["Child"],tab_row["Senior Citizen"] )  )
+        try:
+            c.execute("INSERT INTO fares (Stage, Adults, Child, Senior) values (? , ? , ? , ?)", (tab_row["Fare Stage Number"],tab_row["Adults"],tab_row["Child"],tab_row["Senior Citizen"] )  )
+        except:
+            print("Can't insert into database")
     data.append(sub_data)
 
 time.ctime()
