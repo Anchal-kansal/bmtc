@@ -13,13 +13,13 @@ beautifulsoup4
 # **DIRECTORY STRUCTURE**
 
 
-### bmtc->FlaskApp->templates
-                           
-                           ->index.html
 
-                           ->app.py
+## bmtc->FlaskApp->templates
+                             ->index.html
+
+                             ->app.py
                              
-                           ->bmtc.db
+                             ->bmtc.db
                              
       ->route.py
       
