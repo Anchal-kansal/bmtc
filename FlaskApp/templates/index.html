@@ -36,6 +36,27 @@
         </footer>
  
     </div>
+{%if users%}
+    <div class="users" style="margin-left:20%">
+      <h2>Routes List</h2>
+      <table style="width:100%;">
+        {%for route in users%}
+          <tr>
+            <td>{{route[0]}}</td>
+          </tr>   
+          <tr>
+            <td>{{route[1]}}</td>
+          </tr>
+          <tr>
+            <td>{{route[2]}}</td>
+          </tr>
+          <tr>
+            <td>{{route[3]}}</td>
+          </tr>
+        {%endfor%}
+      </table>
+    </div>
+    {%endif%}
 </body>
  
 </html>
