@@ -8,8 +8,8 @@ import time
 try:
     conn = sqlite3.connect("bmtc.db")
     c = conn.cursor()
-    c.execute('DROP TABLE IF EXISTS fares')
-    c.execute('CREATE TABLE fares(Stage INTEGER, Adults INTEGER, Child INTEGER, Senior INTEGER)')
+    
+    c.execute('CREATE TABLE IF NOT EXISTS fares(Stage INTEGER, Adults INTEGER, Child INTEGER, Senior INTEGER)')
 except:
     print("Database Connection error")
     os._exit(1)
