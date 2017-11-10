@@ -8,8 +8,8 @@ import os
 try:
     conn = sqlite3.connect("bmtc.db")
     c = conn.cursor()
-    c.execute('DROP TABLE IF EXISTS routes')
-    c.execute('CREATE TABLE routes(bus_id TEXT , route_id TEXT, timings TEXT, bus_stop TEXT, PRIMARY KEY (bus_id, route_id))'   )
+    
+    c.execute('CREATE TABLE IF EXISTS routes(bus_id TEXT , route_id TEXT, timings TEXT, bus_stop TEXT, PRIMARY KEY (bus_id, route_id))'   )
 except:
     print("Database Connection error")
     os._exit(1)
