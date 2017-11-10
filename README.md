@@ -41,7 +41,7 @@ beautifulsoup4
       ->screenshot of webpage
    
 # **BUILD INSTRUCTIONS**
-
+clone the project:- using **git clone https://github.com/Anchal-kansal/bmtc/ **
 1. To fetch, parse the bus stops and timings, and store them in json file and database, run route.py using **python3 route.py** [input example: bus_id could be: 314 and route_id could be 3F]
 2. To fetch, parse the fares list, and store them in json file and database, run fare.py using **python3 fare.py**
 [valid input types are: A/C and General]
