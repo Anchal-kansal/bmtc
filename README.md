@@ -1,6 +1,6 @@
 # **REQUIRED DEPENDENCIES**
 
-Flask == 0.12.2
+Flask == 0.12.2 using (sudo pip install flask)
 
 Python == 2.7.6
 
@@ -8,7 +8,7 @@ Python == 3.4.3
 
 SQLite == 3.8.2 
 
-beautifulsoup4
+beautifulsoup4 using (sudo apt-get install python3-bs4)
 
 # **DIRECTORY STRUCTURE**
 
