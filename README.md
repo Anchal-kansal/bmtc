@@ -48,6 +48,7 @@ beautifulsoup4
 3. To fetch the data from database, run route_db.py and fare_db.py, using **python3 route_db.py** and **python3 fare_db.py**, respectively.
 4. To represent the data on the webpage, run app.py using **python app.py**. Go to browser and run http://127.0.0.1:5000/
 Then, enter bus_id=314 and route_id=3F(for example) and whoosh! the data is visible on the webpage!!!
+**P.S.:- for data to be visible, it must be in the db, and insert query is in route.py, so, before running app.py, run route.py**
 
 
     
