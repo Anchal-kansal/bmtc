@@ -1,47 +1,13 @@
-# **REQUIRED DEPENDENCIES**
+**BMTC WEB SCRAPPER** is a python based project which fetches the route and fare details based on the given bus id and route id. The fetched data is stored in a json file as well as sqlite db. It is build using python and its libraries and sqlite db.
 
-Flask == 0.12.2 using (sudo pip install flask)
+There is a script to fetch the data from the database. It is build in python.
 
-Python == 2.7.6
-
-Python == 3.4.3 
-
-SQLite == 3.8.2 
-
-beautifulsoup4 using (sudo apt-get install python3-bs4)
-
-# **DIRECTORY STRUCTURE**
+There is a web program which fetches the data from the database and show it on the web page. It is build using html, css, flask.
 
 
-
- **bmtc->templates**->index.html
-
-      ->app.py
-                             
-      ->bmtc.db
-                             
-      ->route.py
-      
-      ->fare.py
-      
-      ->route_db.py
-      
-      ->fare_db.py
-      
-      ->route.pdf
-      
-      ->fare.pdf
-      
-      ->bmtc.db
-      
-      ->bmtc_fare_scrap_Nov_09_2017.json
-      
-      ->bmtc_route_scrap_Nov_09_2017.json
-      
-      ->screenshot of webpage
-   
 # **BUILD INSTRUCTIONS**
-clone the project:- using **git clone https://github.com/Anchal-kansal/bmtc/ **
+clone the project:- using **git clone https://github.com/Anchal-kansal/bmtc/**
+
 1. To fetch, parse the bus stops and timings, and store them in json file and database, run route.py using **python3 route.py** [input example: bus_id could be: 314 and route_id could be 3F]
 2. To fetch, parse the fares list, and store them in json file and database, run fare.py using **python3 fare.py**
 [valid input types are: A/C and General]
