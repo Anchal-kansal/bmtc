@@ -1,0 +1,5 @@
+Python==2.7.6
+Python==3.4.3
+Flask==0.12.2
+SQLite==3.8.2
+beautifulsoup==4.0.0 
