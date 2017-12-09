@@ -5,23 +5,17 @@ import json
 import sqlite3
 import time
 
-try:
-    conn = sqlite3.connect("bmtc.db")
-    c = conn.cursor()
+conn = sqlite3.connect("bmtc.db")
+c = conn.cursor()
     
-    c.execute('CREATE TABLE IF NOT EXISTS fares(Stage INTEGER, Adults INTEGER, Child INTEGER, Senior INTEGER)')
-except:
-    print("Database Connection error")
-    os._exit(1)
+c.execute('CREATE TABLE IF NOT EXISTS fares(Stage INTEGER, Adults INTEGER, Child INTEGER, Senior INTEGER)')
 
-print("enter the type of bus")
-bustype=input()
 
-if (bustype=='A/C'):
-    url1="https://www.mybmtc.com/ac-service?fareid=acs&qt-home_quick_tab_bottom=2"
-elif (bustype=='General'):
-    url1="https://www.mybmtc.com/general-service?fareid=gns&qt-home_quick_tab_bottom=2"
-else:
+bustype=input("enter the type of bus")
+d={'A/C':"https://www.mybmtc.com/ac-service?fareid=acs&qt-home_quick_tab_bottom=2", "General":"https://www.mybmtc.com/general-service?fareid=gns&qt-home_quick_tab_bottom=2"}
+try:
+    url1= d[bustype]
+except KeyError:
     print("Please Type valid bus service")
     os._exit(1)
 
@@ -38,9 +32,6 @@ for i in table:
     for row in rows:
    
         cols = row.find_all('td')
-        #print(cols)
-        #cols = [ele.text.strip() for ele in cols]
-        #data.append([ele for ele in cols if ele])
 
         tab_row = {}
         tab_row["Fare Stage Number"]=cols[0].get_text()
@@ -54,8 +45,8 @@ for i in table:
         sub_data.append(tab_row)
         try:
             c.execute("INSERT INTO fares (Stage, Adults, Child, Senior) values (? , ? , ? , ?)", (tab_row["Fare Stage Number"],tab_row["Adults"],tab_row["Child"],tab_row["Senior Citizen"] )  )
-        except:
-            print("Can't insert into database")
+        except sqlite3.Error as e:
+            print("Can't insert into database:",e)
     data.append(sub_data)
 
 time.ctime()
@@ -69,4 +60,3 @@ conn.commit()
 
 c.close()
 conn.close()
-
