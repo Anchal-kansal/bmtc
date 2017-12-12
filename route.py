@@ -34,8 +34,8 @@ data={"bus_id":bus,
       "bus_stop":stop
      }
 
-timing = ','.join(map(str,timing))
-stop = ','.join(map(str,stop)) 
+timing = ','.join([str(i) for i in timing])
+stop = ','.join([str(i) for i in stop]) 
 
 try:
     c.execute("INSERT INTO routes (bus_id, route_id, timings, bus_stop) values (? , ? , ? , ?)",
