@@ -12,7 +12,10 @@ c.execute('CREATE TABLE IF NOT EXISTS fares(Stage INTEGER, Adults INTEGER, Child
 
 
 bustype=input("enter the type of bus")
-d={'A/C':"https://www.mybmtc.com/ac-service?fareid=acs&qt-home_quick_tab_bottom=2", "General":"https://www.mybmtc.com/general-service?fareid=gns&qt-home_quick_tab_bottom=2"}
+d={
+    "A/C": "https://www.mybmtc.com/ac-service?fareid=acs&qt-home_quick_tab_bottom=2",
+    "General": "https://www.mybmtc.com/general-service?fareid=gns&qt-home_quick_tab_bottom=2"
+}
 try:
     url1= d[bustype]
 except KeyError:
